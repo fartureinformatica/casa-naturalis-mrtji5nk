@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Casa Naturalis — restaurante em Santa Bárbara, MG. Gastronomia acolhedora, ingredientes selecionados e uma experiência natural e sofisticada." />
+  <meta name="keywords" content="Casa Naturalis, restaurante em Santa Bárbara MG, restaurante Brumal, gastronomia, comida caseira, restaurante natural" />
+  <meta name="author" content="Casa Naturalis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f3d32" />
+
+  <meta property="og:title" content="Casa Naturalis | Restaurante em Santa Bárbara, MG" />
+  <meta property="og:description" content="Sabores autênticos, ambiente acolhedor e uma experiência gastronômica natural em Santa Bárbara, MG." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <title>Casa Naturalis | Restaurante em Santa Bárbara, MG</title>
+
+  <style>
+    :root{
+      --bg: #f7f6f1;
+      --surface: #ffffff;
+      --surface-2: #eef3ee;
+      --text: #1f2933;
+      --muted: #5f6b63;
+      --primary: #1f3d32;
+      --primary-2: #2f5d4d;
+      --accent: #b88a45;
+      --line: rgba(31,61,50,.12);
+      --shadow: 0 20px 50px rgba(17, 24, 39, .10);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(184,138,69,.09), transparent 26%),
+        radial-gradient(circle at top right, rgba(47,93,77,.08), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(31, 61, 50, .08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .02em;
+    }
+
+    h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
+    h1 { font-size: clamp(2.3rem, 6vw, 4.8rem); letter-spacing: -0.04em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -0.03em; }
+    h3 { font-size: 1.2rem; }
+    p { margin: 0; color: var(--muted); }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(247,246,241,.78);
+      border-bottom: 1px solid rgba(31,61,50,.10);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--primary);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(31,61,50,.25);
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      display: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(31,61,50,.18);
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .nav-cta:hover { transform: translateY(-2px); background: #193127; }
+
+    .menu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 0 18px;
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 118px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-copy .lead {
+      font-size: 1.05rem;
+      max-width: 56ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 700;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(31,61,50,.20);
+    }
+
+    .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.72);
+      color: var(--primary);
+      border: 1px solid rgba(31,61,50,.12);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(31,61,50,.08);
+      box-shadow: 0 10px 24px rgba(17,24,39,.05);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.5);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(31,61,50,.12), rgba(184,138,69,.14));
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .hero-card small { color: var(--muted); }
+
+    .hero-image {
+      min-height: 480px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(31,61,50,.05), rgba(31,61,50,.38)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80') center/cover;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.5);
+    }
+
+    .cards-grid, .services-grid, .testimonials-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .info-card, .service-card, .testimonial-card, .contact-card {
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(31,61,50,.08);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(17,24,39,.06);
+    }
+
+    .info-card {
+      padding: 22px;
+    }
+
+    .info-card .icon, .service-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(31,61,50,.08);
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .service-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .testimonial-card {
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .quote {
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c9a15f, #1f3d32);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .contact-wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-card {
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--surface-2);
+    }
+
+    .contact-item .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 320px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(31,61,50,.08);
+      background:
+        linear-gradient(180deg, rgba(31,61,50,.06), rgba(31,61,50,.18)),
+        url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80') center/cover;
+      display: flex;
+      align-items: end;
+      padding: 22px;
+    }
+
+    .map .overlay {
+      width: 100%;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+    }
+
+    footer {
+      padding: 28px 0 96px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: start;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 36px rgba(37, 211, 102, .35);
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-float:hover { transform: translateY(-3px) scale(1.03); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .menu-btn { display: none; }
+      .nav-links, .nav-cta { display: inline-flex; }
+      .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 40px; }
+      .hero-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .testimonials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .contact-wrap { grid-template-columns: .95fr 1.05fr; align-items: stretch; }
+      .footer-inner { flex-direction: row; align-items: center; }
+    }
+
+    @media (min-width: 1024px) {
+      .section { padding: 92px 0; }
+      .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .contact-card { padding: 30px; }
+      .hero { padding-top: 132px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#inicio" aria-label="Casa Naturalis">
+          <span class="brand-mark"><i data-lucide="sprout"></i></span>
+          <span>Casa Naturalis</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Menu principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <a class="nav-cta" href="https://wa.me/5531999349733" target="_blank" rel="noopener">Falar no WhatsApp</a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><i data-lucide="leaf"></i> Restaurante em Santa Bárbara, MG</span>
+          <h1>Uma experiência natural, acolhedora e cheia de sabor.</h1>
+          <p class="lead">
+            Na Casa Naturalis, cada prato é pensado para oferecer conforto, frescor e uma atmosfera elegante,
+            ideal para almoços especiais, encontros em família e momentos memoráveis.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5531999349733" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i>
+              Reservar pelo WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#contato">
+              <i data-lucide="map-pin"></i>
+              Ver endereço
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Santa Bárbara, MG</strong>
+              <span>Atendimento local e acolhedor</span>
+            </div>
+            <div class="stat">
+              <strong>Ambiente natural</strong>
+              <span>Clima confortável e sofisticado</span>
+            </div>
+            <div class="stat">
+              <strong>Ingredientes selecionados</strong>
+              <span>Foco em frescor e qualidade</span>
+            </div>
+            <div class="stat">
+              <strong>Experiência completa</strong>
+              <span>Do almoço ao encontro especial</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media reveal">
+          <div class="hero-image" role="img" aria-label="Ambiente de restaurante com mesa posta e pratos apetitosos"></div>
+          <div class="hero-card">
+            <div class="hero-badge"><i data-lucide="utensils-crossed"></i></div>
+            <div>
+              <strong>Casa Naturalis</strong>
+              <small>Gastronomia com alma, sabor e cuidado em cada detalhe.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow"><i data-lucide="badge-info"></i> Sobre nós</span>
+          <h2>O equilíbrio perfeito entre comida, natureza e bem-estar.</h2>
+          <p>
+            A Casa Naturalis é um restaurante em Santa Bárbara, MG, criado para quem valoriza boa gastronomia,
+            atendimento cordial e uma ambientação elegante inspirada na natureza.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="info-card reveal">
+            <div class="icon"><i data-lucide="trees"></i></div>
+            <h3>Atmosfera aconchegante</h3>
+            <p>Espaço pensado para proporcionar uma refeição tranquila, agradável e memorável.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon"><i data-lucide="salad"></i></div>
+            <h3>Foco em frescor</h3>
+            <p>Pratos preparados com atenção aos ingredientes e combinações que valorizam o sabor natural.</p>
+          </div>
+          <div class="info-card reveal">
+            <div class="icon"><i data-lucide="sparkles"></i></div>
+            <h3>Experiência premium</h3>
+            <p>Detalhes elegantes, serviço acolhedor e uma proposta gastronômica diferenciada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow"><i data-lucide="star"></i> Serviços</span>
+          <h2>O que você encontra na Casa Naturalis</h2>
+          <p>Uma seleção de serviços e experiências para tornar cada visita especial.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon"><i data-lucide="coffee"></i></div>
+            <h3>Almoço especial</h3>
+            <p>Opções saborosas para o dia a dia ou para celebrar momentos com mais tranquilidade.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon"><i data-lucide="calendar-heart"></i></div>
+            <h3>Reservas para grupos</h3>
+            <p>Ideal para encontros familiares, amigos e pequenas confraternizações.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon"><i data-lucide="gift"></i></div>
+            <h3>Datas especiais</h3>
+            <p>Ambiente perfeito para aniversários, comemorações e experiências românticas.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon"><i data-lucide="badge-check"></i></div>
+            <h3>Atendimento acolhedor</h3>
+            <p>Equipe preparada para receber bem e garantir uma visita confortável do início ao fim.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow"><i data-lucide="messages-square"></i> Depoimentos</span>
+          <h2>O que nossos clientes dizem</h2>
+          <p>Experiências reais de quem já viveu a Casa Naturalis.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card reveal">
+            <div class="quote">“Ambiente lindo, atendimento impecável e comida deliciosa. É o tipo de lugar que a gente quer voltar sempre.”</div>
+            <div class="person">
+              <div class="avatar">M</div>
+              <div>
+                <strong>Mariana S.</strong>
+                <p>Santa Bárbara, MG</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="quote">“Gostei muito da experiência. Tudo é muito bem organizado, acolhedor e com uma proposta natural super charmosa.”</div>
+            <div class="person">
+              <div class="avatar">R</div>
+              <div>
+                <strong>Rodrigo A.</strong>
+                <p>Brumal, MG</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="quote">“Perfeito para um almoço tranquilo em família. Ótimo atendimento e uma sensação de conforto em cada detalhe.”</div>
+            <div class="person">
+              <div class="avatar">L</div>
+              <div>
+                <strong>Larissa T.</strong>
+                <p>Santa Bárbara, MG</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow"><i data-lucide="phone-call"></i> Contato</span>
+          <h2>Fale com a Casa Naturalis</h2>
+          <p>Estamos prontos para atender sua mensagem e receber sua visita.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-card reveal">
+            <div class="contact-item">
+              <div class="icon"><i data-lucide="phone"></i></div>
+              <div>
+                <strong>Telefone</strong>
+                <p>(31) 99934-9733</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <strong>Endereço</strong>
+                <p>R. Cleves De Faria, 185 - Brumal, Santa Bárbara - MG, 35960-000, Brasil</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon"><i data-lucide="clock-3"></i></div>
+              <div>
+                <strong>Atendimento</strong>
+                <p>Consulte horários e disponibilidade diretamente pelo WhatsApp.</p>
+              </div>
+            </div>
+
+            <a class="btn btn-primary" href="https://wa.me/5531999349733" target="_blank" rel="noopener">
+              <i data-lucide="whatsapp"></i>
+              Chamar no WhatsApp
+            </a>
+          </div>
+
+          <div class="map reveal" aria-label="Mapa ilustrativo da localização">
+            <div class="overlay">
+              <strong>Casa Naturalis</strong>
+              <p>Santa Bárbara - MG</p>
+              <p style="margin-top:8px;">R. Cleves De Faria, 185 - Brumal, Santa Bárbara - MG, 35960-000, Brasil</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong style="color: var(--primary);">Casa Naturalis</strong>
+          <p>Restaurante em Santa Bárbara, MG.</p>
+        </div>
+        <div>
+          <p>© <span id="year"></span> Casa Naturalis. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5531999349733" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i data-lucide="message-circle-more"></i>
+  </a>
+
+  <script>
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
